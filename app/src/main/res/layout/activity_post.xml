@@ -11,8 +11,22 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="field"
+        android:text="Field"/>
 
-        android:text="EXECUTE"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="part"
+        android:text="Part"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="partMap"
+        android:text="PartMap"/>
 
     <TextView
         android:id="@+id/content"

@@ -20,11 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.HelloWorldActivity">
+        <activity android:name=".ui.GetActivity">
         </activity>
         <activity android:name=".ui.HttpActivity">
         </activity>
         <activity android:name=".ui.FormActivity">
+        </activity>
+        <activity android:name=".ui.PostActivity">
         </activity>
     </application>
 

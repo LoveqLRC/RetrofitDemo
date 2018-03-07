@@ -9,8 +9,14 @@
     tools:context="loveq.com.retrofitdemo.MainActivity">
 
    <Button
-       android:onClick="HellWorld"
-       android:text="HelloWorld"
+       android:onClick="get"
+       android:text="get"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+
+   <Button
+       android:onClick="post"
+       android:text="post"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"/>
    <Button
