@@ -1,4 +1,4 @@
-#Retrofit总结
+# Retrofit总结
 
 ## Get
 
@@ -26,6 +26,7 @@
 
 #### @FormUrlEncoded
 表示请求体是一个Form表单，一般登录页面用的就是这种请求方式：
+
 `Content-Type: application/x-www-form-urlencoded`
 
 	  public interface BlogService {
@@ -51,7 +52,9 @@
 
 
 #### @Multipart
-表示请求体是一个支持文件上传的Form表单，一般带文件上传的网页用的就是这种请求方式。`Content-Type: multipart/form-data;`
+表示请求体是一个支持文件上传的Form表单，一般带文件上传的网页用的就是这种请求方式。
+
+`Content-Type: multipart/form-data;`
 
 	 		/**
 	         * {@link Part} 后面支持三种类型，{@link RequestBody}、{@link okhttp3.MultipartBody.Part} 、任意类型
