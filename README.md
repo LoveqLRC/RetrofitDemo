@@ -133,3 +133,18 @@
 
 	--> GET http://192.168.1.18:4567/blog/2
 	--> END GET
+
+## @Body
+
+	  public interface BlogService {
+	        @POST("blog")
+	        Call<Result<Blog>> createBlog(@Body Blog blog);
+	    }
+
+请求内容如下
+
+	--> POST http://192.168.1.18:4567/blog
+	Content-Type: application/json; charset=UTF-8
+	Content-Length: 70
+	{"author":"rc","content":" new blog","id":0,"title":"retrofit 练习"}
+	--> END POST (70-byte body)

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import loveq.com.retrofitdemo.ui.BodyActivity;
 import loveq.com.retrofitdemo.ui.GetActivity;
 import loveq.com.retrofitdemo.ui.HeaderActivity;
 import loveq.com.retrofitdemo.ui.HttpActivity;
@@ -41,5 +42,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void url(View view) {
         jumpToActivity(UrlActivity.class);
+    }
+
+    public void body(View view) {
+        jumpToActivity(BodyActivity.class);
     }
 }

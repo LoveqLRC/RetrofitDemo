@@ -30,6 +30,8 @@
         </activity>
         <activity android:name=".ui.UrlActivity">
         </activity>
+        <activity android:name=".ui.BodyActivity">
+        </activity>
     </application>
 
 </manifest>

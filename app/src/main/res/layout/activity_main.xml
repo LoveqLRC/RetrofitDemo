@@ -36,4 +36,10 @@
        android:text="Url"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"/>
+
+   <Button
+       android:onClick="body"
+       android:text="body"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
 </LinearLayout>
