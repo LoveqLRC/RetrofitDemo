@@ -1,6 +1,6 @@
 # Retrofit总结
 
-## Get
+## @GET
 
 
 ### @Path
@@ -20,7 +20,7 @@
 	 //注意/blog后面不能有/
 	 Call<ResponseBody> getBlog(@Query("id") int id);
 
-## Post
+## @POST
 
 ### 表单请求
 
@@ -74,3 +74,62 @@
         @POST("/form")
         @Multipart
         Call<ResponseBody> testFileUpload2(@PartMap Map<String, RequestBody> args, @Part MultipartBody.Part file);
+
+## @Header
+`@Headers`用于添加请求头
+`@Header` 用于添加不固定请求头
+
+
+	 public interface BlogService {
+	        @GET("/headers?showAll=true")
+	        @Headers({"CustomHeader1: customHeaderValue1", "CustomHeader2: customHeaderValue2"})
+	        Call<ResponseBody> testHeader(@Header("CustomHeader3") String customHeaderValue3);
+	    }
+
+请求内容如下
+
+	 --> GET http://192.168.1.18:4567/headers?showAll=true
+	 CustomHeader1: customHeaderValue1
+	 CustomHeader2: customHeaderValue2
+	 CustomHeader3: rc
+	 --> END GET
+
+## @Url
+
+	 public interface BlogService {
+	        /**
+	         * 当GET、POST...HTTP等方法中没有设置Url时，则必须使用 {@link Url}提供
+	         * 对于Query和QueryMap，如果不是String（或Map的第二个泛型参数不是String）时
+	         * 会被默认会调用toString转换成String类型
+	         * Url支持的类型有 okhttp3.HttpUrl, String, java.net.URI, android.net.Uri
+	         * {@link retrofit2.http.QueryMap} 用法和{@link retrofit2.http.FieldMap} 用法一样，不再说明
+	         */
+	        @GET
+	        //当有URL注解时，这里的URL就省略了
+	        Call<ResponseBody> testUrlAndQuery(@Url String url, @Query("showAll") boolean showAll);
+	
+	    }
+
+请求内容如下
+
+	--> GET http://192.168.1.18:4567/headers?showAll=false
+	--> END GET
+
+## @HTTP
+
+	 public interface BlogService {
+	        /**
+	         * method 表示请求的方法，区分大小写，retrofit 不会做处理
+	         * path表示路径
+	         * hasBody表示是否有请求体
+	         */
+	        @HTTP(method = "GET", path = "blog/{id}", hasBody = false)
+	        Call<ResponseBody> getBlog(@Path("id") int id);
+	    }
+
+
+
+请求内容如下
+
+	--> GET http://192.168.1.18:4567/blog/2
+	--> END GET

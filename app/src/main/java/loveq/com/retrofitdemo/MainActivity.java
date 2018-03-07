@@ -5,10 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import loveq.com.retrofitdemo.ui.FormActivity;
 import loveq.com.retrofitdemo.ui.GetActivity;
+import loveq.com.retrofitdemo.ui.HeaderActivity;
 import loveq.com.retrofitdemo.ui.HttpActivity;
 import loveq.com.retrofitdemo.ui.PostActivity;
+import loveq.com.retrofitdemo.ui.UrlActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         jumpToActivity(HttpActivity.class);
     }
 
-    public void Form(View view) {
-        jumpToActivity(FormActivity.class);
+    public void header(View view) {
+        jumpToActivity(HeaderActivity.class);
     }
 
     public void jumpToActivity(Class clazz) {
@@ -38,4 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void url(View view) {
+        jumpToActivity(UrlActivity.class);
+    }
 }
